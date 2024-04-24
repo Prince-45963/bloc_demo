@@ -1,9 +1,10 @@
 import 'dart:io' as i;
-import 'package:bloc_demo/image_picker_bloc/image_picker_bloc.dart';
-import 'package:bloc_demo/image_picker_bloc/image_picker_event.dart';
-import 'package:bloc_demo/image_picker_bloc/image_picker_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../blocs/image_picker_bloc/image_picker_bloc.dart';
+import '../../blocs/image_picker_bloc/image_picker_event.dart';
+import '../../blocs/image_picker_bloc/image_picker_state.dart';
 class ImagePickerUI extends StatefulWidget {
   const ImagePickerUI({super.key});
 

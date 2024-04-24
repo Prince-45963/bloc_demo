@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
-import 'package:bloc_demo/switchsliderbloc/switchSliderEvent.dart';
-import 'package:bloc_demo/switchsliderbloc/switchSliderState.dart';
+import 'package:bloc_demo/blocs/switchsliderbloc/switchSliderEvent.dart';
+import 'package:bloc_demo/blocs/switchsliderbloc/switchSliderState.dart';
 class SwitchSliderBloc extends Bloc<SwitchSliderEvent,SwitchSliderState>{
   SwitchSliderBloc():super(SwitchSliderState()){
     on<EnableDisableNotificationEvent>(_enableDisableNotification);

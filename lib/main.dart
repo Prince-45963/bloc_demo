@@ -1,14 +1,17 @@
-import 'package:bloc_demo/image_picker_bloc/image_picker_bloc.dart';
-import 'package:bloc_demo/switchsliderbloc/switchSliderBloc.dart';
+
+import 'package:bloc_demo/blocs/todo_bloc/todo_bloc.dart';
 import 'package:bloc_demo/ui/counter/counter.dart';
 import 'package:bloc_demo/ui/image_picker/image_picker_ui.dart';
 import 'package:bloc_demo/ui/switchSlider/switchslider.dart';
+import 'package:bloc_demo/ui/todo/todo_screen.dart';
 import 'package:bloc_demo/utils/image_picker_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:bloc/bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'counterbloc/counterBloc.dart';
+import 'blocs/counterbloc/counterBloc.dart';
+import 'blocs/image_picker_bloc/image_picker_bloc.dart';
+import 'blocs/switchsliderbloc/switchSliderBloc.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,7 +27,8 @@ class MyApp extends StatelessWidget {
       providers: [
             BlocProvider(create: (context) => CounterBloc(),),
         BlocProvider(create: (context) => SwitchSliderBloc(),),
-        BlocProvider(create: (context) => ImagePickerBloc(ImagePickerUtils()),)
+        BlocProvider(create: (context) => ImagePickerBloc(ImagePickerUtils()),),
+        BlocProvider(create: (context) => TodoBloc(),)
 
       ],
       
@@ -49,7 +53,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: const ImagePickerUI(),
+        home: const TodoScreen(),
       ),
     );
   }

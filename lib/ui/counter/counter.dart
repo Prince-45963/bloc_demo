@@ -3,9 +3,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../counterbloc/counterBloc.dart';
-import '../../counterbloc/counterEvent.dart';
-import '../../counterbloc/counterState.dart';
+import '../../blocs/counterbloc/counterBloc.dart';
+import '../../blocs/counterbloc/counterEvent.dart';
+import '../../blocs/counterbloc/counterState.dart';
+
 
 class Counter extends StatefulWidget {
   const Counter({super.key});

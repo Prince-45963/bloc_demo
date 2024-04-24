@@ -1,8 +1,10 @@
-import 'package:bloc_demo/switchsliderbloc/switchSliderBloc.dart';
-import 'package:bloc_demo/switchsliderbloc/switchSliderEvent.dart';
-import 'package:bloc_demo/switchsliderbloc/switchSliderState.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../blocs/switchsliderbloc/switchSliderBloc.dart';
+import '../../blocs/switchsliderbloc/switchSliderEvent.dart';
+import '../../blocs/switchsliderbloc/switchSliderState.dart';
 
 class SwitchSlider extends StatefulWidget {
   const SwitchSlider({super.key});
