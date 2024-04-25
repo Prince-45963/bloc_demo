@@ -1,6 +1,9 @@
 
+import 'package:bloc_demo/blocs/favourite_bloc/favourite_bloc.dart';
 import 'package:bloc_demo/blocs/todo_bloc/todo_bloc.dart';
+import 'package:bloc_demo/repository/favourite_repo.dart';
 import 'package:bloc_demo/ui/counter/counter.dart';
+import 'package:bloc_demo/ui/favourite/favourite_screen.dart';
 import 'package:bloc_demo/ui/image_picker/image_picker_ui.dart';
 import 'package:bloc_demo/ui/switchSlider/switchslider.dart';
 import 'package:bloc_demo/ui/todo/todo_screen.dart';
@@ -28,7 +31,9 @@ class MyApp extends StatelessWidget {
             BlocProvider(create: (context) => CounterBloc(),),
         BlocProvider(create: (context) => SwitchSliderBloc(),),
         BlocProvider(create: (context) => ImagePickerBloc(ImagePickerUtils()),),
-        BlocProvider(create: (context) => TodoBloc(),)
+        BlocProvider(create: (context) => TodoBloc(),),
+        BlocProvider(create: (context) => FavouriteBloc(favouriteRepository: FavouriteRepository(), favouriteList: [],deleteList: []),),
+
 
       ],
       
@@ -53,7 +58,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: const TodoScreen(),
+        home: const FavouriteScreen(),
       ),
     );
   }
