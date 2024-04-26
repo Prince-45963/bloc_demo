@@ -1,10 +1,13 @@
 
 import 'package:bloc_demo/blocs/favourite_bloc/favourite_bloc.dart';
+import 'package:bloc_demo/blocs/post_bloc/post_blocs.dart';
 import 'package:bloc_demo/blocs/todo_bloc/todo_bloc.dart';
 import 'package:bloc_demo/repository/favourite_repo.dart';
+import 'package:bloc_demo/repository/post_repository.dart';
 import 'package:bloc_demo/ui/counter/counter.dart';
 import 'package:bloc_demo/ui/favourite/favourite_screen.dart';
 import 'package:bloc_demo/ui/image_picker/image_picker_ui.dart';
+import 'package:bloc_demo/ui/posts/post_screen.dart';
 import 'package:bloc_demo/ui/switchSlider/switchslider.dart';
 import 'package:bloc_demo/ui/todo/todo_screen.dart';
 import 'package:bloc_demo/utils/image_picker_utils.dart';
@@ -33,6 +36,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (context) => ImagePickerBloc(ImagePickerUtils()),),
         BlocProvider(create: (context) => TodoBloc(),),
         BlocProvider(create: (context) => FavouriteBloc(favouriteRepository: FavouriteRepository(), favouriteList: [],deleteList: []),),
+        BlocProvider(create: (context) => PostBloc(postRepository: PostRepository(),tempPostList: []),),
 
 
       ],
@@ -58,7 +62,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: const FavouriteScreen(),
+        home: const PostScreen(),
       ),
     );
   }

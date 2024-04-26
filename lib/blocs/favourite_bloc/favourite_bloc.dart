@@ -4,6 +4,7 @@ import 'package:bloc_demo/blocs/favourite_bloc/favourite_state.dart';
 
 import '../../model/favourite_model.dart';
 import '../../repository/favourite_repo.dart';
+import '../../utils/list_status.dart';
 class FavouriteBloc extends Bloc<FavouriteEvent,FavouriteState>{
   FavouriteRepository? favouriteRepository;
   List<FavouriteModel>? favouriteList;
