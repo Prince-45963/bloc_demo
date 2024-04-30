@@ -29,8 +29,29 @@ List<PostModel>? tempPostList;
   }
 
   void searchPostList(SearchPostEvent event, Emitter<PostState> emit){
-    tempPostList = state.postList?.where((element) => element.id == event.id).toList();
-    emit(state.copyWith(tempPostList: tempPostList,status: ListStatus.Success,message: ""));
+    tempPostList = state.postList?.where((element)
+    {
+     if(element.id.toString() == event.id){
+       return true;
+     }else{
+       return false;
+     }
+    }).toList();
+
+    if(event.id== null || event.id!.isEmpty){
+
+      emit(state.copyWith(status: ListStatus.Success,message: "",tempPostList: []));
+
+    }else {
+      if(tempPostList==null || tempPostList!.isEmpty){
+        emit(state.copyWith(status: ListStatus.Failed, message: "No data found"));
+      }else {
+        emit(state.copyWith(
+            tempPostList: tempPostList,
+            status: ListStatus.Success,
+            message: ""));
+      }
+    }
   }
 
 }

@@ -16,7 +16,6 @@ class PostScreen extends StatefulWidget {
 class _PostScreenState extends State<PostScreen> {
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     context.read<PostBloc>().add(FetchPostEvents());
   }
@@ -37,9 +36,11 @@ class _PostScreenState extends State<PostScreen> {
               if(state.status==ListStatus.Laoding){
                 return Center(child: CircularProgressIndicator(),);
               }
-              else if(state.searchMessage!.isNotEmpty){
-                return Center(
-                  child: Text(state.searchMessage!),
+              else if(state.message!.isNotEmpty){
+                return Expanded(
+                  child: Center(
+                    child: Text(state.message!),
+                  ),
                 );
               }
               else {
@@ -58,7 +59,7 @@ class _PostScreenState extends State<PostScreen> {
                               children: [
                                 Text("Id: ${item.id.toString()}"),
                                 Text("Title: ${item.title.toString()}"),
-                                Text("Body; ${item.body.toString()}")
+                                Text("Body: ${item.body.toString()}")
                             
                               ],
                             ),
